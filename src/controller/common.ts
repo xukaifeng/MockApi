@@ -16,6 +16,7 @@ export class AlertEventController {
   @Post('/*')
   async getMockDataByGet(): Promise<IGlobalResult> {
     const originalUrl = this.ctx.originalUrl;
+    console.log('test');
     const filePath = originalUrl.replace('/mock/log/api/v2/', '');
     const content = await this.staticService.getStaticData(filePath);
     return { success: true, message: 'OK', data: content };
